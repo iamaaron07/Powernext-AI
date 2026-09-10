@@ -14,7 +14,22 @@
       "Sensor_S1",
       "Sensor_S2",
       "Sensor_S3",
-      "Sensor_S4"
+      "Sensor_S4",
+      "Sensor_mean",
+      "Sensor_std",
+      "Sensor_range",
+      "Sensor_cv",
+      "Sensor_S1_minus_Sensor_S2",
+      "Sensor_S1_minus_Sensor_S3",
+      "Sensor_S1_minus_Sensor_S4",
+      "Sensor_S2_minus_Sensor_S3",
+      "Sensor_S2_minus_Sensor_S4",
+      "Sensor_S3_minus_Sensor_S4",
+      "Electrical_power_proxy",
+      "Temperature_duration_proxy",
+      "Missing_count",
+      "Reg_disagreement",
+      "Isolation_anomaly_score"
     ],
     "missing_values_training": {
       "Test_ID": 0,
@@ -32,36 +47,36 @@
     "duplicate_rows_training": 0
   },
   "validation": {
-    "strategy": "5-fold shuffled KFold for regression and 5-fold stratified KFold for classification",
+    "strategy": "5-fold shuffled KFold for regression; 5-fold stratified KFold repeated 5x (averaged OOF probabilities) for classification",
     "seed": 42,
     "regression_model": "ExtraTreesRegressor",
-    "regression_mae": 0.9340443222511909,
-    "regression_rmse": 2.3522083018938824,
-    "regression_r2": 0.9515779702189996,
+    "regression_mae": 0.9705051844749999,
+    "regression_rmse": 2.3535287090661847,
+    "regression_r2": 0.9515235917519552,
     "classification_model": "ExtraTreesClassifier",
-    "classification_threshold": 0.35,
-    "classification_accuracy": 0.946,
-    "invalid_precision": 0.7985074626865671,
-    "invalid_recall": 0.7985074626865671,
-    "invalid_f1": 0.7985074626865671,
+    "classification_threshold": 0.3312757421417837,
+    "classification_accuracy": 0.989,
+    "invalid_precision": 0.9624060150375939,
+    "invalid_recall": 0.9552238805970149,
+    "invalid_f1": 0.9588014981273408,
     "confusion_matrix_valid_invalid": [
       [
-        839,
-        27
+        861,
+        5
       ],
       [
-        27,
-        107
+        6,
+        128
       ]
     ]
   },
   "prediction_summary": {
-    "predicted_valid": 323,
-    "predicted_invalid": 27,
-    "reference_min": 13.379798491666664,
-    "reference_max": 54.53631613333336,
-    "reference_mean": 26.266548345845237,
-    "reference_median": 22.729699760416658
+    "predicted_valid": 313,
+    "predicted_invalid": 37,
+    "reference_min": 13.505499624999997,
+    "reference_max": 54.21880583333339,
+    "reference_mean": 26.272458395857143,
+    "reference_median": 22.72918085416665
   },
   "submission_schema": [
     "Test_ID",
@@ -69,8 +84,8 @@
     "Validity_Label"
   ],
   "environment": {
-    "python": "3.13.2",
-    "platform": "Windows-11-10.0.26200-SP0"
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0"
   },
   "task3_note": "No separate Task 3 specification was present in the workspace; this summary is generated from the verified pipeline outputs and validation results."
 }
